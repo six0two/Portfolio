@@ -15,7 +15,16 @@
     <link rel="stylesheet" href="css/fontello.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&amp;subset=latin-ext" rel="stylesheet">
     
-    
+    <script type="text/javascript">
+        var dzisiaj=new Date();
+        var dzien=dzisiaj.getDate();
+        var miesiac=dzisiaj.getMonth()+1;
+        var rok=dzisiaj.getFullYear();
+        
+        var godzina=dzisiaj.getHours();
+        var minuta=dzisiaj.getMinutes();
+        var sekunda=dzisiaj.getSeconds();
+    </script>
 </head>
 
 
@@ -26,7 +35,12 @@
          <div class="rectangle">
          
              <div id="logo">Marcin Gałka</div>
-             <div id="clock">23:20:00</div>
+             <div id="clock"></div>
+             
+             <script type="text/javascript">
+                document.getElementById("clock").innerHTML=dzien+"/"+miesiac+"/"+rok;
+             </script>
+             
              <div style="clear: both"></div>
              
          </div> 
