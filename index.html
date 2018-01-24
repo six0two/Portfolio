@@ -16,19 +16,32 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&amp;subset=latin-ext" rel="stylesheet">
     
     <script type="text/javascript">
+        
+        function odliczanie()
+        {
+        
         var dzisiaj=new Date();
         var dzien=dzisiaj.getDate();
         var miesiac=dzisiaj.getMonth()+1;
         var rok=dzisiaj.getFullYear();
         
         var godzina=dzisiaj.getHours();
+            if (godzina<10) godzina = "0"+godzina;
         var minuta=dzisiaj.getMinutes();
+            if (minuta<10) minuta = "0"+minuta;
         var sekunda=dzisiaj.getSeconds();
+            if (sekunda<10) sekunda = "0"+sekunda;
+            
+        document.getElementById("clock").innerHTML=dzien+"/"+miesiac+"/"+rok+"  |  "+godzina+":"+minuta+":"+sekunda;
+            
+        setTimeout("odliczanie(),1000");
+            
+        }
     </script>
 </head>
 
 
-<body>
+<body onload="odliczanie();">
     
      <div id="container">
         
@@ -36,10 +49,6 @@
          
              <div id="logo">Marcin Gałka</div>
              <div id="clock"></div>
-             
-             <script type="text/javascript">
-                document.getElementById("clock").innerHTML=dzien+"/"+miesiac+"/"+rok;
-             </script>
              
              <div style="clear: both"></div>
              
